@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane prefHeight="600.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CourseSelectionController">
+   <top>
+      <ToolBar fx:id="searchCourseNo" prefHeight="60.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#gohome" prefHeight="37.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/HomeButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label alignment="CENTER" prefHeight="45.0" prefWidth="736.0" text="Illinois Institute of Technology">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#logout" prefHeight="37.0" prefWidth="45.0">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/LogoutButton.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+        </items>
+      </ToolBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="494.0" prefWidth="704.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="427.0" layoutY="54.0" text="Course No">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="SelectCourseNo" layoutX="504.0" layoutY="49.0" promptText="Enter Course No">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Label alignment="CENTER" layoutX="6.0" layoutY="16.0" prefHeight="17.0" prefWidth="840.0" text="To View Courses Enter  Either Course Name/ Course No/ Click search to view all courses in your department" textFill="#2504ff">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font></Label>
+            <Button layoutX="418.0" layoutY="312.0" mnemonicParsing="false" onAction="#Remove" prefHeight="26.0" prefWidth="60.0" text="Remove" />
+            <Button layoutX="640.0" layoutY="485.0" mnemonicParsing="false" onAction="#okSubmission" prefHeight="26.0" prefWidth="70.0" text="Submit">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="726.0" layoutY="485.0" mnemonicParsing="false" onAction="#cancel" prefHeight="26.0" prefWidth="70.0" text="Cancel">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label layoutX="73.0" layoutY="54.0" text="Courses Name">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <TextField fx:id="SelectCourseName" layoutX="175.0" layoutY="49.0" promptText="Enter Course Name">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <Button layoutX="723.0" layoutY="48.0" mnemonicParsing="false" onAction="#search" prefWidth="70.0" text="Search">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button layoutX="341.0" layoutY="312.0" mnemonicParsing="false" onAction="#Add" prefHeight="26.0" prefWidth="60.0" text="Add" />
+            <TableView fx:id="table1" layoutX="117.0" layoutY="88.0" prefHeight="216.0" prefWidth="617.0">
+              <columns>
+                  <TableColumn fx:id="T1sectionno" prefWidth="75.0" text="Section No" />
+                <TableColumn fx:id="T1courseno" prefWidth="75.0" text="Course No" />
+                <TableColumn fx:id="T1coursename" prefWidth="139.33331298828125" text="Course Name" />
+                  <TableColumn fx:id="T1profname" prefWidth="118.6666259765625" text="Professor Name" />
+                  <TableColumn fx:id="T1day" prefWidth="87.6666259765625" text="Day" />
+                  <TableColumn fx:id="T1time" prefWidth="121.3333740234375" text="Time" />
+              </columns>
+            </TableView>
+            <TableView fx:id="table2" layoutX="119.0" layoutY="347.0" prefHeight="123.0" prefWidth="618.0">
+               <columns>
+                  <TableColumn fx:id="T2sectionno" prefWidth="73.66665649414062" text="Section No" />
+                  <TableColumn fx:id="T2courseno" prefWidth="76.33334350585938" text="Course No" />
+                  <TableColumn fx:id="T2coursename" prefWidth="144.0" text="Course Name" />
+                  <TableColumn fx:id="T2profname" prefWidth="124.0" text="Professor Name" />
+                  <TableColumn fx:id="T2day" prefWidth="75.3333740234375" text="Day" />
+                  <TableColumn fx:id="T2time" prefWidth="122.6666259765625" text="Time" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
